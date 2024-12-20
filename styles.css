@@ -27,7 +27,7 @@ body {
 main {
     background-color: var(--neutro);
     width: 440px;
-    height: 603px;
+    height: auto;
     margin-top: 64px;
     padding: 56px;
     border-radius: 16px;
@@ -38,7 +38,7 @@ main {
     gap: 24px;
 }
 
-h2{
+h2 {
     font-family: var(--fonte-titulo);
     color: var(--cor-primaria);
     font-size: 20px;
@@ -77,7 +77,7 @@ p {
     line-height: 19px;
 }
 
-#adicionar-botao {
+#adicionar-item{
     text-align: center;
     font-size: 18px;
     color: var(--neutro);
