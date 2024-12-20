@@ -98,7 +98,7 @@ p {
     gap: 8px;
 }
 
-.item-lista-container {
+.lista-item-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
