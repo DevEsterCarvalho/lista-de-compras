@@ -1,4 +1,8 @@
+import { excluirItem } from "./excluirItem.js"
+import { verificarListaComprados } from "./verificarListaComprados.js"
+
 const listaComprados = document.getElementById("lista-comprados")
+const listaDeCompras = document.getElementById("lista-de-compras")
 let contador = 0
 
 export function criarItemDaLista(item){
@@ -60,9 +64,17 @@ export function criarItemDaLista(item){
     imagemRemover.src = "img/delete.svg"
     imagemRemover.alt = "Remover"
 
+    botaoRemover.addEventListener("click", function() {
+        excluirItem(itemDaLista)
+    })
+
     const imagemEditar = document.createElement("img")
     imagemEditar.src = "img/edit.svg"
     imagemEditar.alt = "Editar"
+
+    botaoEditar.addEventListener("click", function () {
+        editarItem(itemDaLista);
+    })
 
     botaoEditar.appendChild(imagemEditar)
     botaoRemover.appendChild(imagemRemover)
@@ -74,7 +86,7 @@ export function criarItemDaLista(item){
 
     const itemData = document.createElement("p")
     itemData.innerText = `${new Date().toLocaleDateString("pt-BR", { weekday: "long"})} (${new Date().toLocaleDateString()}) às  ${new Date().toLocaleTimeString("pt-BR", {hour: "numeric", minute: "numeric"})}`
-     itemData.classList.add("data-texto")
+    itemData.classList.add("data-texto")
 
     itemDaLista.appendChild(containerItemLista)
     itemDaLista.appendChild(itemData)
